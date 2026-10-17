@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For My Payal Priya 💗</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A little world, made just for Payal Priya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout: one long, calm scroll. Envelope opens the world, then a card-by-card questionnaire,
+     a dusk band for "you don't have to be strong", memory cards, and the final letter. */
+  --cream: #fff7f0;
+  --paper: #fffdf9;
+  --blush: #fbd5e0;
+  --blush-line: #f1c2d1;
+  --rose: #c94f84;
+  --rose-deep: #a93a6c;
+  --rosegold: #c48a78;
+  --lavender: #dccbf2;
+  --plum: #47294f;
+  --plum-soft: #6f5578;
+  --dusk-a: #4b3070;
+  --dusk-b: #8e4c8c;
+  --dusk-c: #b05585;
+  --font-script: 'Parisienne', 'Snell Roundhand', 'Brush Script MT', cursive;
+  --font-body: 'Nunito', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--plum);
+  font: 17px/1.7 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ---------- ambient sky ---------- */
+.sky {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(120% 60% at 50% 105%, #ffd9c4 0%, rgba(255, 217, 196, 0) 60%),
+    linear-gradient(180deg, #e6d6f6 0%, #f8d4e3 38%, #ffe2d3 72%, #fff3e6 100%);
+}
+#ambient { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.page { position: relative; z-index: 1; max-width: 700px; margin-inline: auto; padding-block: 1.5rem 3rem; }
+
+/* ---------- type ---------- */
+.script { font-family: var(--font-script); font-weight: 400; line-height: 1.15; text-wrap: balance; }
+h1, h2, h3 { margin: 0; }
+.h2 { font-family: var(--font-script); font-weight: 400; font-size: clamp(2.1rem, 8vw, 2.9rem); line-height: 1.12; color: var(--rose-deep); text-wrap: balance; }
+.kicker { font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--plum-soft); font-weight: 700; margin: 0 0 .4rem; }
+p { margin: 0 0 1.05em; }
+.soft { color: var(--plum-soft); }
+.small { font-size: .9rem; }
+.center { text-align: center; }
+
+/* ---------- buttons ---------- */
+.btn {
+  appearance: none; border: 0; cursor: pointer; font: inherit; font-weight: 700; letter-spacing: .01em;
+  display: inline-flex; align-items: center; justify-content: center; gap: .45rem; text-align: center; text-decoration: none;
+  min-height: 48px; padding: .8rem 1.5rem; border-radius: 999px; color: #fff;
+  background: linear-gradient(135deg, #d4567f, #b43f7d);
+  box-shadow: 0 8px 22px rgba(180, 63, 125, .32), 0 0 0 0 rgba(212, 86, 127, .45);
+  transition: transform .2s ease, box-shadow .2s ease;
+  animation: glow 3.2s ease-in-out infinite;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0) scale(.98); }
+.btn.ghost { background: transparent; color: var(--rose-deep); box-shadow: inset 0 0 0 1.5px var(--rose); animation: none; }
+.btn.cream { background: var(--paper); color: var(--rose-deep); }
+.btn.small-btn { min-height: 40px; padding: .45rem 1rem; font-size: .9rem; }
+:focus-visible { outline: 3px solid var(--plum); outline-offset: 3px; border-radius: 8px; }
+.dusk :focus-visible { outline-color: #fff; }
+@keyframes glow { 0%, 100% { box-shadow: 0 8px 22px rgba(180, 63, 125, .32), 0 0 0 0 rgba(212, 86, 127, .0); } 50% { box-shadow: 0 10px 28px rgba(180, 63, 125, .42), 0 0 0 9px rgba(212, 86, 127, .12); } }
+
+/* ---------- opening ---------- */
+.opening { text-align: center; padding-top: .6rem; }
+.site-title { font-family: var(--font-script); font-size: clamp(2rem, 8vw, 2.6rem); color: var(--rose-deep); margin: 0; }
+.flower-row { display: flex; justify-content: center; gap: .5rem; margin: .2rem 0 0; color: var(--rosegold); }
+.flower-row svg { width: 22px; height: 22px; opacity: .85; }
+.flower-row svg:nth-child(2) { color: #d98aa9; width: 28px; height: 28px; }
+
+.env { position: relative; display: block; width: min(88%, 330px); aspect-ratio: 3 / 2; margin: 7.4rem auto 1.1rem; padding: 0; background: none; border: 0; cursor: pointer; font: inherit; color: inherit; perspective: 900px; }
+.env-back { position: absolute; inset: 0; border-radius: 10px; background: linear-gradient(#f0bccd, #e6a3ba); box-shadow: 0 22px 44px rgba(169, 58, 108, .28); }
+.env-letter { position: absolute; left: 7%; right: 7%; top: 9%; height: 80%; z-index: 2; border-radius: 6px; background: var(--paper); box-shadow: 0 -2px 10px rgba(169, 58, 108, .12); transition: transform 1s cubic-bezier(.3, .8, .3, 1) .35s; display: flex; justify-content: center; padding-top: .8rem; font-family: var(--font-script); font-size: 1.5rem; color: var(--rose); }
+.env.open .env-letter { transform: translateY(-46%); }
+.env-front { position: absolute; inset: 0; z-index: 3; border-radius: 10px; clip-path: polygon(0 0, 50% 54%, 100% 0, 100% 100%, 0 100%); background: linear-gradient(165deg, #fbdde6, #f1b3c7); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 11%; }
+.env-name { font-family: var(--font-script); font-size: clamp(1.7rem, 7.4vw, 2.1rem); color: var(--rose-deep); line-height: 1.1; }
+.env-flap { position: absolute; left: 0; right: 0; top: 0; height: 54%; z-index: 4; clip-path: polygon(0 0, 100% 0, 50% 100%); background: linear-gradient(#f6c4d3, #eba8bf); transform-origin: top; transition: transform .75s ease, z-index 0s .3s; }
+.env.open .env-flap { transform: rotateX(180deg); z-index: 1; }
+.env-seal { position: absolute; z-index: 5; left: 50%; top: 54%; width: 38px; height: 38px; margin: -19px 0 0 -19px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 1.1rem; background: radial-gradient(circle at 35% 30%, #e7798f, #b43f6e); box-shadow: 0 3px 8px rgba(120, 30, 70, .35); transition: opacity .3s ease, transform .4s ease; }
+.env.open .env-seal { opacity: 0; transform: scale(.4); }
+.env-hint { font-size: .85rem; color: var(--plum-soft); margin: 0 0 1.4rem; }
+
+.note { background: rgba(255, 253, 249, .88); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border: 1px solid var(--blush-line); border-radius: 26px; padding: 1.7rem 1.4rem 1.6rem; text-align: left; box-shadow: 0 16px 40px rgba(169, 58, 108, .12); }
+.note .greet { font-family: var(--font-script); font-size: clamp(1.9rem, 7vw, 2.4rem); color: var(--rose-deep); margin: 0 0 .5rem; line-height: 1.15; }
+.note p { font-size: 1.05rem; }
+.note .ask { font-weight: 700; margin: 1.3rem 0 1.2rem; }
+.note .btn { width: 100%; }
+
+.rise > * { animation: rise .9s ease both; animation-delay: calc(var(--i, 0) * .14s + var(--base, 0s)); }
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.enter { animation: rise 1s ease both; }
+
+/* ---------- sections ---------- */
+section.block { margin-top: 3.2rem; scroll-margin-top: 1rem; }
+.sec-head { text-align: center; margin-bottom: 1.3rem; }
+.sec-head p { margin: .5rem auto 0; max-width: 34ch; color: var(--plum-soft); }
+
+.card { background: rgba(255, 253, 249, .9); border: 1px solid var(--blush-line); border-radius: 24px; padding: 1.4rem 1.2rem 1.3rem; box-shadow: 0 14px 34px rgba(169, 58, 108, .1); }
+.privacy { font-size: .85rem; color: var(--plum-soft); text-align: center; margin: .9rem 0 0; }
+
+.progress-top { display: flex; justify-content: space-between; gap: .6rem; flex-wrap: wrap; font-size: .85rem; font-weight: 700; color: var(--plum-soft); margin-bottom: .45rem; }
+.progress-top .opt-note { font-weight: 400; }
+.bar { height: 9px; border-radius: 99px; background: #f3dbe5; overflow: hidden; margin-bottom: 1.2rem; }
+.bar-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #e68aa8, #c94f84); transition: width .5s ease; }
+.q-title { font-family: var(--font-script); font-size: clamp(1.75rem, 6.6vw, 2.15rem); line-height: 1.2; color: var(--rose-deep); margin-bottom: 1rem; text-wrap: balance; }
+.q-title:focus { outline: none; }
+.opts { display: grid; gap: .6rem; }
+.opt {
+  appearance: none; font: inherit; text-align: left; cursor: pointer; min-height: 52px; width: 100%;
+  padding: .75rem 1rem; border-radius: 16px; background: #fff; color: var(--plum);
+  border: 1.5px solid var(--blush-line); display: flex; align-items: center; justify-content: space-between; gap: .6rem;
+  transition: background .2s ease, border-color .2s ease, transform .15s ease;
+}
+.opt:hover { border-color: var(--rose); }
+.opt:active { transform: scale(.985); }
+.opt .tick { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--blush-line); display: grid; place-items: center; font-size: .8rem; color: transparent; }
+.opt[aria-pressed="true"] { background: linear-gradient(135deg, #ffe9f0, #f3e6fb); border-color: var(--rose); font-weight: 700; }
+.opt[aria-pressed="true"] .tick { background: var(--rose); border-color: var(--rose); color: #fff; }
+textarea {
+  width: 100%; min-height: 130px; resize: vertical; font: inherit; color: var(--plum); background: #fff;
+  border: 1.5px solid var(--blush-line); border-radius: 16px; padding: .85rem 1rem; line-height: 1.55;
+}
+textarea::placeholder { color: #8e7597; }
+textarea:focus-visible { outline: 3px solid var(--plum); outline-offset: 2px; }
+.nav-row { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.2rem; align-items: center; }
+.nav-row .spacer { flex: 1 1 0; }
+
+.sum-list { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: .55rem; }
+.sum-item { display: flex; gap: .7rem; align-items: center; justify-content: space-between; background: #fff; border: 1px solid var(--blush-line); border-radius: 16px; padding: .65rem .8rem .65rem 1rem; }
+.sum-item > div { min-width: 0; }
+.sum-item .lab { font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: var(--plum-soft); }
+.sum-item .ans { overflow-wrap: anywhere; white-space: pre-wrap; }
+.sum-item .ans.skipped { color: #86708f; font-style: italic; }
+.sum-actions { display: grid; gap: .6rem; margin-top: 1.2rem; }
+.status { min-height: 1.5em; margin: .7rem 0 0; font-weight: 700; color: var(--rose-deep); text-align: center; }
+.copybox { margin-top: .6rem; min-height: 150px; font-size: .9rem; }
+
+/* dusk band */
+.dusk { position: relative; overflow: hidden; border-radius: 30px; padding: 2.6rem 1.4rem 2.4rem; color: #fff8f3; text-align: center;
+  background: radial-gradient(90% 40% at 50% 100%, rgba(255, 196, 160, .42), rgba(255, 196, 160, 0) 70%), linear-gradient(180deg, var(--dusk-a) 0%, var(--dusk-b) 62%, var(--dusk-c) 100%);
+  box-shadow: 0 22px 50px rgba(75, 48, 112, .3); }
+.dusk::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .9; animation: twinkle 5s ease-in-out infinite alternate;
+  background-image:
+    radial-gradient(2px 2px at 12% 14%, #fff, transparent), radial-gradient(1.5px 1.5px at 28% 8%, #fff, transparent),
+    radial-gradient(2.5px 2.5px at 46% 18%, #ffe9b8, transparent), radial-gradient(1.5px 1.5px at 63% 7%, #fff, transparent),
+    radial-gradient(2px 2px at 81% 15%, #fff, transparent), radial-gradient(1.5px 1.5px at 92% 28%, #ffe9b8, transparent),
+    radial-gradient(1.5px 1.5px at 7% 38%, #fff, transparent), radial-gradient(2px 2px at 73% 36%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 38% 33%, #fff, transparent); }
+@keyframes twinkle { from { opacity: .55; } to { opacity: 1; } }
+.dusk > * { position: relative; }
+.dusk .h2 { color: #fff; }
+.dusk p { font-size: 1.07rem; max-width: 36ch; margin-inline: auto; }
+.dusk .strong { font-weight: 700; }
+.heart-reply { min-height: 1.6em; margin: 1rem 0 0; font-weight: 700; }
+
+/* about us cards */
+.us-grid { display: grid; gap: .9rem; grid-template-columns: 1fr; }
+.us-card { background: rgba(255, 253, 249, .92); border: 1px solid var(--blush-line); border-radius: 22px; padding: 1.1rem 1.1rem 1rem; display: flex; flex-direction: column; gap: .6rem; min-width: 0; transition: transform .25s ease, box-shadow .25s ease; }
+.us-card:focus-within { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(169, 58, 108, .16); }
+.us-card label { font-weight: 700; display: flex; gap: .6rem; align-items: flex-start; }
+.us-card .em { font-size: 1.5rem; line-height: 1.2; }
+.us-card textarea { min-height: 96px; }
+.us-card .tag { font-size: .75rem; color: var(--plum-soft); }
+@media (min-width: 640px) { .us-grid { grid-template-columns: 1fr 1fr; } }
+
+/* final letter */
+.final { position: relative; overflow: hidden; border-radius: 30px; padding: 2.6rem 1.5rem 2.2rem; background: linear-gradient(180deg, rgba(255, 253, 249, .96), rgba(255, 238, 244, .96)); border: 1px solid var(--blush-line); box-shadow: 0 24px 54px rgba(169, 58, 108, .18); }
+.final > * { position: relative; z-index: 1; }
+.final .greet { font-family: var(--font-script); font-size: clamp(2.2rem, 9vw, 3.1rem); line-height: 1.12; color: var(--rose-deep); margin-bottom: .8rem; }
+.final p { font-size: 1.06rem; }
+.final .sign { font-family: var(--font-script); font-size: 1.9rem; line-height: 1.25; color: var(--rose-deep); margin-top: 1.4rem; }
+.final .sign small { display: block; font-family: var(--font-body); font-size: 1rem; color: var(--plum-soft); }
+.corner-flower { position: absolute; z-index: 0 !important; width: 90px; height: 90px; color: #f3bfd1; opacity: .75; }
+.corner-flower.tl { top: -26px; left: -22px; transform: rotate(-12deg); }
+.corner-flower.br { bottom: -30px; right: -20px; width: 110px; height: 110px; color: var(--lavender); transform: rotate(16deg); }
+.ask-line { font-family: var(--font-script); font-size: 2rem; color: var(--rose-deep); margin: 1.6rem 0 1rem; text-align: center; line-height: 1.2; }
+.answers { display: grid; gap: .65rem; }
+.answers .btn { width: 100%; }
+.answer-box { margin-top: 1.1rem; padding: 1rem 1.1rem; border-radius: 18px; background: #fff; border: 1.5px solid var(--rose); font-weight: 600; text-align: center; animation: rise .6s ease both; }
+.fall-heart { position: absolute; bottom: -24px; z-index: 0; color: #e68aa8; opacity: 0; animation: fall 7s linear forwards; pointer-events: none; }
+@keyframes fall { 0% { transform: translateY(0) translateX(0) scale(.8); opacity: 0; } 10% { opacity: .75; } 100% { transform: translateY(-520px) translateX(var(--sx, 20px)) scale(1.1); opacity: 0; } }
+
+.footer { margin-top: 2.4rem; text-align: center; font-size: .85rem; color: var(--plum-soft); display: grid; gap: .6rem; justify-items: center; }
+
+/* floating hearts on click */
+.heart-fx { position: fixed; z-index: 60; pointer-events: none; transform: translate(-50%, -50%); animation: pop 1.7s ease-out forwards; }
+@keyframes pop { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.4); } 15% { opacity: 1; } 100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.15); } }
+
+/* music pill */
+.music { position: fixed; z-index: 70; right: max(14px, env(safe-area-inset-right, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px)); display: inline-flex; align-items: center; gap: .5rem; min-height: 46px; padding: .5rem 1rem; border-radius: 999px; border: 1.5px solid var(--rose); background: rgba(255, 253, 249, .95); color: var(--rose-deep); font: inherit; font-weight: 700; font-size: .9rem; cursor: pointer; box-shadow: 0 8px 20px rgba(169, 58, 108, .22); }
+.music[aria-pressed="true"] { background: var(--rose-deep); color: #fff; border-color: var(--rose-deep); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; animation-delay: 0s !important; transition-duration: .001ms !important; transition-delay: 0s !important; }
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="flower" viewBox="-50 -50 100 100">
+      <g fill="currentColor">
+        <ellipse cx="0" cy="-23" rx="12" ry="21"/>
+        <ellipse cx="0" cy="-23" rx="12" ry="21" transform="rotate(72)"/>
+        <ellipse cx="0" cy="-23" rx="12" ry="21" transform="rotate(144)"/>
+        <ellipse cx="0" cy="-23" rx="12" ry="21" transform="rotate(216)"/>
+        <ellipse cx="0" cy="-23" rx="12" ry="21" transform="rotate(288)"/>
+      </g>
+      <circle r="9" fill="#f6d27a"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="sky" aria-hidden="true"></div>
+<canvas id="ambient" aria-hidden="true"></canvas>
+
+<button id="musicBtn" class="music" type="button" aria-pressed="false" aria-label="Play soft background music">
+  <span id="musicIcon" aria-hidden="true">♪</span><span id="musicLabel">Play soft music</span>
+</button>
+
+<main class="page">
+
+  <!-- ============ OPENING ============ -->
+  <section class="opening" id="opening" aria-labelledby="siteTitle">
+    <h1 class="site-title" id="siteTitle">For My <span data-full>Payal Priya</span> 💗</h1>
+    <div class="flower-row" aria-hidden="true">
+      <svg><use href="#flower"/></svg><svg><use href="#flower"/></svg><svg><use href="#flower"/></svg>
+    </div>
+
+    <button class="env" id="envelope" type="button" aria-expanded="false" aria-label="Envelope for Payal Priya. Tap to open or close.">
+      <span class="env-back"></span>
+      <span class="env-letter" aria-hidden="true">for you ♥</span>
+      <span class="env-front"><span class="env-name">Dear <span data-full>Payal Priya</span> 💌</span></span>
+      <span class="env-flap"></span>
+      <span class="env-seal" aria-hidden="true">♥</span>
+    </button>
+    <p class="env-hint">tap the envelope</p>
+
+    <div class="note rise" style="--base:.5s">
+      <p class="greet">Hey, my <span data-first>Payal</span>… ❤️🥹</p>
+      <p>This little corner of the internet is just for you. I made it because there are so many things I want to tell you, so many moments I want to share with you, and one very special meeting I am looking forward to.</p>
+      <p>I know your heart has been through a difficult time lately. You don't have to pretend to be okay with me, baby. You can talk, cry, smile, or simply hold my hand in silence.</p>
+      <p>I cannot take away all your pain, but I want to be someone who listens, understands, and stands beside you with patience and love.</p>
+      <p>I miss you so much, <span data-full>Payal Priya</span>. I am waiting for the day I can see you again, look into your eyes, and tell you in person how much you mean to me. ❤️🫂</p>
+      <p class="ask">Ready to open our little world, baby?</p>
+      <button class="btn" id="openWorld" type="button">Open Your Little World, <span data-first>Payal</span> 💗</button>
+    </div>
+  </section>
+
+  <div id="world" hidden>
+
+    <!-- ============ QUESTIONS ============ -->
+    <section class="block" id="questions" aria-labelledby="qHead">
+      <div class="sec-head">
+        <p class="kicker">Our little date</p>
+        <h2 class="h2" id="qHead">Let's plan a peaceful meeting 💑</h2>
+        <p>Pick what feels right. Skip anything you like. There are no wrong answers.</p>
+      </div>
+      <div class="card" id="quiz" aria-live="polite"></div>
+      <p class="privacy">Your answers stay on this phone only. Nothing is sent to me automatically.</p>
+    </section>
+
+    <!-- ============ SUPPORT ============ -->
+    <section class="block" id="support" aria-labelledby="sHead">
+      <div class="dusk">
+        <h2 class="h2" id="sHead">You don't have to be strong all the time 🫂</h2>
+        <div class="rise" style="margin-top:1.3rem">
+          <p class="script" style="font-size:2rem;margin-bottom:.6rem">My <span data-first>Payal</span>, ❤️</p>
+          <p>You don't have to smile just to make other people comfortable.</p>
+          <p>You don't have to hide your sadness.</p>
+          <p>Some days will feel easier, and some days may feel difficult again. Take your time. There is no deadline for healing.</p>
+          <p>I may not have the perfect words to make everything better, but I can offer you my time, my patience, my listening ears, and my hand whenever you want to hold it.</p>
+          <p>I cannot replace anyone you have lost, and I will never ask you to forget. I just want to be someone who treats your heart gently while you move through this difficult chapter.</p>
+          <p>You matter on your happy days, your quiet days, and your hardest days.</p>
+          <p class="strong">I love you, baby. You don't have to pretend with me. ❤️🫂</p>
+        </div>
+        <button class="btn cream" id="sendHeart" type="button">Send Me a Little Heart ❤️</button>
+        <p class="heart-reply" id="heartReply" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT US ============ -->
+    <section class="block" id="us" aria-labelledby="uHead">
+      <div class="sec-head">
+        <p class="kicker">Just us</p>
+        <h2 class="h2" id="uHead">Little things about us 💞</h2>
+        <p>Write as much or as little as you want, <span data-first>Payal</span>. Every card is optional.</p>
+      </div>
+      <div class="us-grid" id="usGrid"></div>
+    </section>
+
+    <!-- ============ FINAL ============ -->
+    <section class="block" id="finalSec" aria-labelledby="fHead">
+      <div class="final" id="final">
+        <svg class="corner-flower tl" aria-hidden="true"><use href="#flower"/></svg>
+        <svg class="corner-flower br" aria-hidden="true"><use href="#flower"/></svg>
+        <h2 class="greet" id="fHead">My <span data-full>Payal Priya</span>, 🌷❤️</h2>
+        <div class="rise">
+          <p>No matter how difficult life gets, I hope you always remember that you deserve love, kindness, peace, and happiness.</p>
+          <p>I don't expect every moment with me to be perfect. I just want to create honest, beautiful memories with you, one little moment at a time.</p>
+          <p>Whenever you feel ready, baby, let's meet. No pressure, no expectations — just us, sharing a little time together.</p>
+          <p>I miss you more than these words can explain.</p>
+          <p>Until I see you again, take care of your beautiful heart, <span data-first>Payal</span>. 🫂💗</p>
+          <p class="sign">With all my love,<small data-sign>Your Baby's Favourite Person ❤️</small></p>
+        </div>
+        <p class="ask-line">Will you plan a little moment with me? 🌷</p>
+        <div class="answers">
+          <button class="btn" type="button" data-reply="yes">Yes, My Love ❤️</button>
+          <button class="btn" type="button" data-reply="plan">Let's Plan It Together 💌</button>
+          <button class="btn ghost" type="button" data-reply="time">I Need More Time 🕊️</button>
+        </div>
+        <div class="answer-box" id="answerBox" role="status" hidden></div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p>Everything you wrote here is saved only in this browser, on this device.</p>
+      <button class="btn ghost small-btn" id="resetAll" type="button">Clear everything saved here</button>
+      <p class="status" id="resetStatus" role="status"></p>
+    </div>
+  </div>
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ============ EASY CUSTOMISING ============ */
+  var CONFIG = {
+    firstName: 'Payal',
+    fullName: 'Payal Priya',
+    signature: "Your Baby's Favourite Person ❤️",
+    /* Your WhatsApp number with country code and no + or spaces, e.g. 919876543210.
+       Leave empty and WhatsApp will let her pick the chat herself. */
+    whatsappNumber: '919900393349',
+    storageKey: 'payal-little-world-v1'
+  };
+
+  var QUESTIONS = [
+    { id: 'when', short: 'When we meet', text: '{n}, when would you like to meet me? 🥹', options: ['Today, if possible ❤️', 'Tomorrow 🌷', 'This weekend 🫶', 'Whenever I feel ready 🕊️', 'Let me decide later 💗'] },
+    { id: 'where', short: 'Where we meet', text: 'Where would you feel comfortable meeting me? 🌸', options: ['A peaceful park 🌳', 'A cute café ☕', 'Somewhere quiet where we can talk 💕', 'A place we both love 🥹', 'You decide, baby ❤️', 'I have my own place in mind ✨'] },
+    { id: 'eat', short: 'What we eat', text: 'What should we eat together? 😋', options: ['Pizza 🍕', 'Ice cream 🍦', 'Biryani 🍛', 'Momos 🥟', 'Chocolate and snacks 🍫', 'Anything, as long as we are together 🫂'] },
+    { id: 'veg', short: 'Veg or non-veg', text: 'Baby, veg or non-veg? 🥗', options: ['Veg 🌱', 'Non-veg 🍗', 'Both are fine 😋', 'Whatever you choose, baby ❤️'] },
+    { id: 'bring', short: 'What I should bring', text: 'What would you like me to bring for you? 🎁', options: ['Flowers 🌹', 'Chocolates 🍫', 'A cute teddy bear 🧸', 'Something meaningful and handmade 💌', 'Just come and give me your time 🫂', 'Surprise me, baby! 🎀'] },
+    { id: 'greet', short: 'How to greet', text: 'How should I greet you when we meet? 🥹', options: ['A warm hug, if I feel like it 🫂', 'Hold my hand 🤝❤️', 'A cute smile and a little conversation 😊', 'Just sit beside me for a while 🌷', 'Let me decide at that moment 💗'] },
+    { id: 'better', short: 'What helps that day', text: 'What would make you feel better that day? 🌻', options: ['Someone who listens to me 👂❤️', 'A little walk together 🌳', 'Talking about happy memories 🌈', 'Watching something funny 😂', 'Peaceful silence together 🫶', "I don't know yet, and that's okay 🕊️"] },
+    { id: 'need', short: 'What I need most', text: '{n}, what do you need most from me right now? 💗', options: ['Your time ⏳', 'Your understanding 🫂', 'Your patience 🌷', 'Your reassurance ❤️', 'Someone to listen without judging me 💌', 'A little bit of everything 🥹'] },
+    { id: 'words', short: 'Something I want to say', type: 'text', text: 'Is there anything you want to tell me but haven\'t been able to say? 💌', placeholder: "You can tell me anything, baby. I'll listen with an open heart... ❤️" },
+    { id: 'promise', short: 'Our tiny promise', text: 'One tiny promise between us? 🥺', options: ['We will communicate honestly 💞', 'We will be patient with each other 🌷', 'We will support each other through difficult days 🫂', 'We will make more beautiful memories together 🌈', "We will always respect each other's feelings ❤️"] }
+  ];
+
+  var ABOUT = [
+    { id: 'first', em: '👀', q: 'What was your first impression of me?' },
+    { id: 'memory', em: '📸', q: 'What is your favourite memory of us?' },
+    { id: 'smile', em: '😊', q: 'What little thing I do makes you smile?' },
+    { id: 'nick', em: '🥹', q: 'Which nickname of mine do you secretly love?' },
+    { id: 'adventure', em: '🌍', q: 'What should our next little adventure be?' },
+    { id: 'song', em: '🎶', q: 'What song reminds you of us?' },
+    { id: 'day', em: '💑', q: 'If we had one whole day together, how would you spend it?' },
+    { id: 'understand', em: '💌', q: 'What is one thing you want us to understand better about each other?' }
+  ];
+
+  var REPLIES = {
+    yes: "Thank you, my love. You just made my whole heart smile. I'll be counting the days until I see you. ❤️",
+    plan: "Then let's plan it together, one small step at a time. Send me your answers whenever you're ready, and we'll shape it the way you like. 💌",
+    time: 'Of course, baby. Take all the time you need. There is no pressure. ❤️'
+  };
+
+  /* ============ HELPERS ============ */
+  var reduce = false;
+  try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function el(tag, props) {
+    var e = document.createElement(tag);
+    props = props || {};
+    Object.keys(props).forEach(function (k) {
+      var v = props[k];
+      if (k === 'class') e.className = v;
+      else if (k === 'text') e.textContent = v;
+      else if (k === 'style') e.style.cssText = v;
+      else if (k.indexOf('on') === 0) e.addEventListener(k.slice(2), v);
+      else if (v === true) e.setAttribute(k, '');
+      else if (v !== false && v != null) e.setAttribute(k, v);
+    });
+    for (var i = 2; i < arguments.length; i++) {
+      var c = arguments[i];
+      if (c == null || c === false) continue;
+      e.appendChild(c.nodeType ? c : document.createTextNode(c));
+    }
+    return e;
+  }
+  function scrollTo(node) { node.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); }
+
+  /* personalise */
+  $$('[data-first]').forEach(function (n) { n.textContent = CONFIG.firstName; });
+  $$('[data-full]').forEach(function (n) { n.textContent = CONFIG.fullName; });
+  $$('[data-sign]').forEach(function (n) { n.textContent = CONFIG.signature; });
+  $$('.rise').forEach(function (box) { Array.prototype.forEach.call(box.children, function (c, i) { c.style.setProperty('--i', i); }); });
+
+  /* ============ STORAGE ============ */
+  var state = { answers: {}, about: {}, step: 0 };
+  try {
+    var raw = localStorage.getItem(CONFIG.storageKey);
+    if (raw) {
+      var p = JSON.parse(raw);
+      if (p && typeof p === 'object') {
+        state.answers = p.answers && typeof p.answers === 'object' ? p.answers : {};
+        state.about = p.about && typeof p.about === 'object' ? p.about : {};
+        state.step = (p.step === 'summary' || (typeof p.step === 'number' && p.step >= 0 && p.step < QUESTIONS.length)) ? p.step : 0;
+      }
+    }
+  } catch (e) {}
+  function save() { try { localStorage.setItem(CONFIG.storageKey, JSON.stringify(state)); } catch (e) {} }
+
+  /* ============ HEART BURSTS ============ */
+  var GLYPHS = ['❤', '💗', '💕', '♥', '✿'];
+  function burst(x, y, n) {
+    if (reduce) return;
+    n = n || 6;
+    for (var i = 0; i < n; i++) {
+      var s = document.createElement('span');
+      s.className = 'heart-fx';
+      s.textContent = GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+      s.style.left = x + 'px';
+      s.style.top = y + 'px';
+      s.style.color = ['#e0608d', '#c94f84', '#e68aa8', '#b78bd9'][i % 4];
+      s.style.fontSize = (14 + Math.random() * 14) + 'px';
+      s.style.animationDelay = (Math.random() * 0.2) + 's';
+      s.style.setProperty('--dx', (Math.random() * 150 - 75) + 'px');
+      s.style.setProperty('--dy', -(80 + Math.random() * 130) + 'px');
+      document.body.appendChild(s);
+      (function (node) { setTimeout(function () { if (node.parentNode) node.parentNode.removeChild(node); }, 2100); })(s);
+    }
+  }
+  function burstFrom(node, n) {
+    var r = node.getBoundingClientRect();
+    burst(r.left + r.width / 2, r.top + r.height / 2, n);
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest ? e.target.closest('.btn, .opt, .env') : null;
+    if (!t) return;
+    if (e.clientX || e.clientY) burst(e.clientX, e.clientY, 5); else burstFrom(t, 5);
+  });
+
+  /* ============ ENVELOPE ============ */
+  var env = $('#envelope');
+  function setEnv(open) { env.classList.toggle('open', open); env.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  env.addEventListener('click', function () { setEnv(!env.classList.contains('open')); });
+  setTimeout(function () { setEnv(true); }, reduce ? 0 : 900);
+
+  /* ============ OPEN WORLD ============ */
+  $('#openWorld').addEventListener('click', function () {
+    var w = $('#world');
+    var firstTime = w.hidden;
+    w.hidden = false;
+    if (firstTime) w.classList.add('enter');
+    renderQuiz();
+    requestAnimationFrame(function () { scrollTo($('#questions')); });
+  });
+
+  /* ============ QUESTIONNAIRE ============ */
+  var quizEl = $('#quiz');
+  var qText = function (q) { return q.text.replace('{n}', CONFIG.firstName); };
+
+  function goto(step, keepScroll) {
+    state.step = step; save(); renderQuiz();
+    var h = $('#quiz [data-focus]');
+    if (h) { try { h.focus({ preventScroll: true }); } catch (e) {} }
+    if (!keepScroll && quizEl.getBoundingClientRect().top < 0) scrollTo($('#questions'));
+  }
+
+  function renderQuiz() {
+    quizEl.textContent = '';
+    if (state.step === 'summary') renderSummary(); else renderQuestion(state.step);
+  }
+
+  function renderQuestion(i) {
+    var q = QUESTIONS[i], total = QUESTIONS.length;
+    var titleId = 'qt-' + q.id;
+    quizEl.appendChild(el('div', { class: 'progress-top' },
+      el('span', { text: 'Question ' + (i + 1) + ' of ' + total }),
+      el('span', { class: 'opt-note', text: 'Skip anything you like' })));
+    quizEl.appendChild(el('div', { class: 'bar', role: 'progressbar', 'aria-valuemin': '0', 'aria-valuemax': String(total), 'aria-valuenow': String(i + 1), 'aria-label': 'Questionnaire progress' },
+      el('div', { class: 'bar-fill', style: 'width:' + ((i + 1) / total * 100) + '%' })));
+    quizEl.appendChild(el('h3', { class: 'q-title', id: titleId, tabindex: '-1', 'data-focus': true, text: qText(q) }));
+
+    if (q.type === 'text') {
+      var ta = el('textarea', { id: 'q-words', maxlength: '900', placeholder: q.placeholder, 'aria-labelledby': titleId });
+      ta.value = state.answers[q.id] || '';
+      ta.addEventListener('input', function () {
+        var v = ta.value.trim();
+        if (v) state.answers[q.id] = ta.value; else delete state.answers[q.id];
+        save();
+      });
+      quizEl.appendChild(ta);
+      quizEl.appendChild(el('p', { class: 'small soft', style: 'margin:.6rem 0 0', text: 'This is private. It only goes to me if you choose to copy it and send it.' }));
+    } else {
+      var group = el('div', { class: 'opts', role: 'group', 'aria-labelledby': titleId });
+      q.options.forEach(function (opt) {
+        var b = el('button', { class: 'opt', type: 'button', 'aria-pressed': state.answers[q.id] === opt ? 'true' : 'false' },
+          el('span', { text: opt }), el('span', { class: 'tick', 'aria-hidden': 'true', text: '✓' }));
+        b.addEventListener('click', function () {
+          if (state.answers[q.id] === opt) delete state.answers[q.id]; else state.answers[q.id] = opt;
+          save();
+          $$('.opt', group).forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+          if (state.answers[q.id]) b.setAttribute('aria-pressed', 'true');
+        });
+        group.appendChild(b);
+      });
+      quizEl.appendChild(group);
+    }
+
+    var last = i === total - 1;
+    var row = el('div', { class: 'nav-row' });
+    if (i > 0) row.appendChild(el('button', { class: 'btn ghost small-btn', type: 'button', text: 'Back', onclick: function () { goto(i - 1); } }));
+    row.appendChild(el('span', { class: 'spacer' }));
+    row.appendChild(el('button', { class: 'btn ghost small-btn', type: 'button', text: 'Skip this one', onclick: function () { goto(last ? 'summary' : i + 1); } }));
+    row.appendChild(el('button', { class: 'btn small-btn', type: 'button', text: last ? 'See my little plan 💌' : 'Next', onclick: function () { goto(last ? 'summary' : i + 1); } }));
+    quizEl.appendChild(row);
+  }
+
+  function summaryText() {
+    var lines = ["💌 " + CONFIG.fullName + "'s answers for our little meeting", ''];
+    var any = false;
+    QUESTIONS.forEach(function (q) {
+      var a = state.answers[q.id];
+      if (a && String(a).trim()) { any = true; lines.push('• ' + q.short + ': ' + String(a).trim()); }
+    });
+    if (!any) lines.push('(I skipped everything for now, and that is okay 🕊️)');
+    var us = ABOUT.filter(function (a) { return state.about[a.id] && state.about[a.id].trim(); });
+    if (us.length) {
+      lines.push('', '💞 About us');
+      us.forEach(function (a) { lines.push('• ' + a.q + ' ' + state.about[a.id].trim()); });
+    }
+    lines.push('', 'Written in our little world 💗');
+    return lines.join('\n');
+  }
+
+  function renderSummary() {
+    quizEl.appendChild(el('div', { class: 'bar', role: 'progressbar', 'aria-valuemin': '0', 'aria-valuemax': '100', 'aria-valuenow': '100', 'aria-label': 'Questionnaire complete' }, el('div', { class: 'bar-fill', style: 'width:100%' })));
+    quizEl.appendChild(el('h3', { class: 'q-title', tabindex: '-1', 'data-focus': true, text: 'Our little plan 💌' }));
+    quizEl.appendChild(el('p', { class: 'soft', style: 'margin:0', text: 'Here is everything you picked. Tap Edit to change anything, or leave it as it is.' }));
+
+    var list = el('ul', { class: 'sum-list' });
+    QUESTIONS.forEach(function (q, idx) {
+      var a = state.answers[q.id];
+      var has = a && String(a).trim();
+      list.appendChild(el('li', { class: 'sum-item' },
+        el('div', null, el('div', { class: 'lab', text: q.short }), el('div', { class: 'ans' + (has ? '' : ' skipped'), text: has ? String(a).trim() : 'Skipped' })),
+        el('button', { class: 'btn ghost small-btn', type: 'button', 'aria-label': 'Edit: ' + q.short, text: 'Edit', onclick: function () { goto(idx, true); } })));
+    });
+    quizEl.appendChild(list);
+
+    var text = summaryText();
+    var waBase = CONFIG.whatsappNumber ? 'https://wa.me/' + String(CONFIG.whatsappNumber).replace(/\D/g, '') : 'https://wa.me/';
+    var status = el('p', { class: 'status', role: 'status', 'aria-live': 'polite' });
+    var box = el('textarea', { class: 'copybox', id: 'copyBox', readonly: true, 'aria-label': 'Your answers as text', hidden: true });
+    box.value = text;
+
+    var copyBtn = el('button', { class: 'btn', type: 'button', text: 'Copy My Answers 💌' });
+    copyBtn.addEventListener('click', function () {
+      function fallback() {
+        box.hidden = false; box.focus(); box.select();
+        status.textContent = 'Select and copy the text below, then paste it into WhatsApp. 💗';
+      }
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            status.textContent = 'Copied! Now paste it in a WhatsApp message to me. 💗';
+          }, fallback);
+        } else { fallback(); }
+      } catch (e) { fallback(); }
+    });
+
+    var wa = el('a', { class: 'btn ghost', href: waBase + '?text=' + encodeURIComponent(text), target: '_blank', rel: 'noopener', text: 'Open WhatsApp with my answers 💬' });
+    var again = el('button', { class: 'btn ghost', type: 'button', text: 'Start Again 💗', onclick: function () {
+      state.answers = {}; state.step = 0; save(); renderQuiz();
+      var h = $('#quiz [data-focus]'); if (h) { try { h.focus({ preventScroll: true }); } catch (e) {} }
+      scrollTo($('#questions'));
+    } });
+
+    quizEl.appendChild(el('div', { class: 'sum-actions' }, copyBtn, wa, again));
+    quizEl.appendChild(status);
+    quizEl.appendChild(box);
+    quizEl.appendChild(el('p', { class: 'privacy', text: 'Copying or opening WhatsApp does not send anything by itself. You choose when to send it.' }));
+  }
+
+  /* ============ SUPPORT HEART ============ */
+  $('#sendHeart').addEventListener('click', function () {
+    burstFrom(this, 14);
+    $('#heartReply').textContent = "Here's a little heart right back for you, " + CONFIG.firstName + ". I'm right here. 💗";
+  });
+
+  /* ============ ABOUT US ============ */
+  var usGrid = $('#usGrid');
+  ABOUT.forEach(function (a) {
+    var id = 'about-' + a.id;
+    var ta = el('textarea', { id: id, maxlength: '700', placeholder: 'Write whatever feels right, or leave it empty 🌷' });
+    ta.value = state.about[a.id] || '';
+    ta.addEventListener('input', function () {
+      if (ta.value.trim()) state.about[a.id] = ta.value; else delete state.about[a.id];
+      save();
+    });
+    usGrid.appendChild(el('div', { class: 'us-card' },
+      el('label', { for: id }, el('span', { class: 'em', 'aria-hidden': 'true', text: a.em }), el('span', { text: a.q })),
+      ta,
+      el('span', { class: 'tag', text: 'Optional' })));
+  });
+
+  /* ============ FINAL ============ */
+  var ansBox = $('#answerBox');
+  $$('[data-reply]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var k = b.getAttribute('data-reply');
+      ansBox.textContent = REPLIES[k];
+      ansBox.hidden = false;
+      ansBox.style.animation = 'none'; void ansBox.offsetWidth; ansBox.style.animation = '';
+      burstFrom(b, k === 'time' ? 4 : 14);
+    });
+  });
+
+  var finalEl = $('#final'), fallTimer = null;
+  function spawnFall() {
+    if (reduce) return;
+    var h = document.createElement('span');
+    h.className = 'fall-heart';
+    h.textContent = Math.random() > 0.3 ? '♥' : '✿';
+    h.style.left = (6 + Math.random() * 88) + '%';
+    h.style.fontSize = (14 + Math.random() * 16) + 'px';
+    h.style.setProperty('--sx', (Math.random() * 60 - 30) + 'px');
+    finalEl.appendChild(h);
+    setTimeout(function () { if (h.parentNode) h.parentNode.removeChild(h); }, 7200);
+  }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting && !fallTimer) { fallTimer = setInterval(spawnFall, 1300); spawnFall(); }
+        else if (!en.isIntersecting && fallTimer) { clearInterval(fallTimer); fallTimer = null; }
+      });
+    }, { threshold: 0.15 }).observe(finalEl);
+  }
+
+  /* ============ RESET ============ */
+  var resetBtn = $('#resetAll'), resetStatus = $('#resetStatus'), resetTimer = null;
+  resetBtn.addEventListener('click', function () {
+    if (!resetBtn.getAttribute('data-armed')) {
+      resetBtn.setAttribute('data-armed', '1');
+      resetBtn.textContent = 'Tap again to clear everything';
+      resetStatus.textContent = '';
+      resetTimer = setTimeout(function () { resetBtn.removeAttribute('data-armed'); resetBtn.textContent = 'Clear everything saved here'; }, 5000);
+      return;
+    }
+    clearTimeout(resetTimer);
+    resetBtn.removeAttribute('data-armed');
+    resetBtn.textContent = 'Clear everything saved here';
+    state = { answers: {}, about: {}, step: 0 };
+    try { localStorage.removeItem(CONFIG.storageKey); } catch (e) {}
+    $$('#usGrid textarea').forEach(function (t) { t.value = ''; });
+    renderQuiz();
+    resetStatus.textContent = 'All cleared from this device. 🌷';
+  });
+
+  /* ============ AMBIENT CANVAS ============ */
+  (function () {
+    var cv = $('#ambient'); if (!cv || !cv.getContext) return;
+    var cx = cv.getContext('2d'), W = 0, H = 0, parts = [];
+    var G = ['♥', '✦', '✿', '♥', '✧'], COL = ['#e58aa8', '#c9a7ea', '#f3b8a4', '#ffffff', '#d96f95'];
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = window.innerWidth; H = window.innerHeight;
+      cv.width = W * dpr; cv.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var count = W < 520 ? 16 : 28;
+      parts = [];
+      for (var i = 0; i < count; i++) parts.push(make(true));
+      if (reduce) draw();
+    }
+    function make(init) {
+      return { x: Math.random() * W, y: init ? Math.random() * H : H + 24, s: 10 + Math.random() * 16, g: G[Math.floor(Math.random() * G.length)], v: 0.15 + Math.random() * 0.35, ph: Math.random() * 6.28, a: 0.22 + Math.random() * 0.33, c: COL[Math.floor(Math.random() * COL.length)] };
+    }
+    function draw() {
+      cx.clearRect(0, 0, W, H);
+      parts.forEach(function (p) {
+        cx.globalAlpha = p.a; cx.fillStyle = p.c; cx.font = p.s + 'px serif'; cx.fillText(p.g, p.x, p.y);
+      });
+      cx.globalAlpha = 1;
+    }
+    function tick() {
+      if (!document.hidden) {
+        parts.forEach(function (p, i) {
+          p.y -= p.v; p.ph += 0.01; p.x += Math.sin(p.ph) * 0.3;
+          if (p.y < -30) parts[i] = make(false);
+        });
+        draw();
+      }
+      requestAnimationFrame(tick);
+    }
+    window.addEventListener('resize', resize);
+    resize();
+    if (!reduce) requestAnimationFrame(tick);
+  })();
+
+  /* ============ OPTIONAL SOFT MUSIC (generated in the browser, starts only on tap) ============ */
+  (function () {
+    var btn = $('#musicBtn'), label = $('#musicLabel'), icon = $('#musicIcon');
+    var ac = null, master = null, filt = null, timer = null, on = false, bar = 0;
+    var CH = [[261.63, 329.63, 392.0, 493.88], [220.0, 261.63, 329.63, 392.0], [174.61, 220.0, 261.63, 329.63], [196.0, 246.94, 293.66, 392.0]];
+    function note(f, t, d, v, type) {
+      var o = ac.createOscillator(), g = ac.createGain();
+      o.type = type; o.frequency.value = f;
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.linearRampToValueAtTime(v, t + d * 0.3);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + d);
+      o.connect(g); g.connect(filt); o.start(t); o.stop(t + d + 0.1);
+    }
+    function play() {
+      var t = ac.currentTime + 0.05, c = CH[bar % CH.length];
+      c.forEach(function (f) { note(f / 2, t, 7.5, 0.05, 'sine'); });
+      [0, 1, 2, 3, 2].forEach(function (i, k) { note(c[i] * 2, t + 0.8 + k * 1.15, 2.4, 0.03, 'triangle'); });
+      bar++;
+    }
+    function start() {
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) { label.textContent = 'Music unavailable'; return false; }
+      if (!ac) {
+        ac = new AC();
+        master = ac.createGain(); master.gain.value = 0.0001;
+        filt = ac.createBiquadFilter(); filt.type = 'lowpass'; filt.frequency.value = 1600;
+        filt.connect(master); master.connect(ac.destination);
+      }
+      ac.resume();
+      master.gain.cancelScheduledValues(ac.currentTime);
+      master.gain.linearRampToValueAtTime(0.8, ac.currentTime + 2);
+      play(); timer = setInterval(play, 6400);
+      return true;
+    }
+    function stop() {
+      clearInterval(timer); timer = null;
+      if (ac) { master.gain.cancelScheduledValues(ac.currentTime); master.gain.linearRampToValueAtTime(0.0001, ac.currentTime + 0.6); }
+    }
+    btn.addEventListener('click', function () {
+      if (!on) { if (!start()) return; on = true; }
+      else { stop(); on = false; }
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Mute background music' : 'Play soft background music');
+      label.textContent = on ? 'Mute music' : 'Play soft music';
+      icon.textContent = on ? '♫' : '♪';
+    });
+  })();
+})();
+</script>
+
+</html>
